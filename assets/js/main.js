@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initAnimations();
     initMobileMenu();
     loadProfileImage();
+    initMediaTabs();
 });
 
 // Navbar scroll effect
@@ -198,6 +199,42 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Media Tabs Filtering
+function initMediaTabs() {
+    const tabs = document.querySelectorAll('.media-tab');
+    const mediaItems = document.querySelectorAll('.media-item');
+
+    if (tabs.length === 0) return;
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            // Remove active class from all tabs
+            tabs.forEach(t => t.classList.remove('active'));
+            // Add active class to clicked tab
+            this.classList.add('active');
+
+            const category = this.getAttribute('data-category');
+
+            // Filter media items
+            mediaItems.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, 50);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    });
+}
 
 // Console Easter Egg
 console.log('%c👋 Hi there!', 'font-size: 24px; font-weight: bold; color: #5e72e4;');
