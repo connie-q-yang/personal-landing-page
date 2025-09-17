@@ -55,12 +55,12 @@
     
     <nav id="navbar">
         <div class="nav-container">
-            <div class="logo">Connie Yang</div>
+            <div class="logo"></div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#expertise">Expertise</a></li>
                 <li><a href="#media">Media</a></li>
-                <li><a href="#publications">Publications</a></li>
+                <li><a href="#publications">Leadership & Research</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -73,32 +73,33 @@
     </nav>
     
     <section class="hero" id="home">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1>Connie Yang</h1>
-                <p class="subtitle">Distinguished AI & Machine Learning Leader</p>
-                <p class="hero-description">
-                    Director of ML/AI at 3Cloud, driving enterprise GenAI transformations for Fortune 500 companies. 
-                    10+ years building production AI systems at Microsoft, LinkedIn, and leading tech companies.
-                </p>
-                <div class="cta-buttons">
-                    <a href="#contact" class="btn btn-primary">
-                        <span>Get in Touch</span>
-                        <span>→</span>
-                    </a>
-                    <a href="#media" class="btn btn-outline">
-                        <span>Featured Work</span>
-                    </a>
-                </div>
+        <div class="hero-center">
+            <div class="profile-circle">
+                <div class="profile-inner">CY</div>
             </div>
-            <div class="hero-image">
-                <div class="profile-image-container">
-                    <div class="profile-image-glow"></div>
-                    <div class="profile-image">
-                        <!-- Profile image will be loaded via JavaScript -->
-                        CY
-                    </div>
-                </div>
+
+            <h1 class="hero-title">Connie Yang</h1>
+
+            <div class="typing-wrapper">
+                <span class="typing-text" id="typingLine"></span>
+                <span class="cursor">|</span>
+            </div>
+
+            <p class="hero-subtitle">
+                Director of ML/AI at 3Cloud • Former Data Scientist at Microsoft
+            </p>
+
+            <div class="hero-stats">
+                <span>10+ Years in AI</span>
+                <span>•</span>
+                <span>2 Patents</span>
+                <span>•</span>
+                <span>$150M+ Impact</span>
+            </div>
+
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-main">Get in Touch</a>
+                <a href="#expertise" class="btn-outline">View Work</a>
             </div>
         </div>
     </section>
@@ -110,33 +111,90 @@
                 <p class="section-subtitle">Specialized in enterprise AI systems and production deployments</p>
             </div>
             <div class="expertise-grid">
-                <div class="expertise-card glass fade-in">
-                    <div class="expertise-icon">🤖</div>
-                    <h3 class="expertise-title">Generative AI & Agentic Frameworks</h3>
-                    <p class="expertise-description">
-                        Built AI assistants using LangChain, AutoGen, and Semantic Kernel integrated with enterprise systems.
-                    </p>
+                <div class="expertise-card fade-in" data-expertise="genai">
+                    <div class="expertise-accent"></div>
+                    <div class="expertise-content">
+                        <div class="expertise-header">
+                            <span class="expertise-number">01</span>
+                            <h3 class="expertise-title">Generative AI & Agentic Frameworks</h3>
+                        </div>
+                        <p class="expertise-description">
+                            Built AI assistants using LangChain, AutoGen, and Semantic Kernel integrated with enterprise systems.
+                        </p>
+                        <div class="expertise-tags">
+                            <span class="tag">LangChain</span>
+                            <span class="tag">AutoGen</span>
+                            <span class="tag">Semantic Kernel</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="expertise-card glass fade-in">
-                    <div class="expertise-icon">⚡</div>
-                    <h3 class="expertise-title">LLMOps & AI Infrastructure</h3>
-                    <p class="expertise-description">
-                        Deployed LLM inference, vector search, and guardrail systems on Azure, GCP, and AWS.
-                    </p>
+                <div class="expertise-card fade-in" data-expertise="llmops">
+                    <div class="expertise-accent"></div>
+                    <div class="expertise-content">
+                        <div class="expertise-header">
+                            <span class="expertise-number">02</span>
+                            <h3 class="expertise-title">LLMOps & AI Infrastructure</h3>
+                        </div>
+                        <p class="expertise-description">
+                            Deployed LLM inference, vector search, and guardrail systems on Azure, GCP, and AWS.
+                        </p>
+                        <div class="expertise-tags">
+                            <span class="tag">Azure AI</span>
+                            <span class="tag">GCP</span>
+                            <span class="tag">AWS</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="expertise-card glass fade-in">
-                    <div class="expertise-icon">📊</div>
-                    <h3 class="expertise-title">Experimentation & Evaluation</h3>
-                    <p class="expertise-description">
-                        Designed A/B testing, uplift modeling, and structured evaluation pipelines for model safety and performance.
-                    </p>
+                <div class="expertise-card fade-in" data-expertise="experimentation">
+                    <div class="expertise-accent"></div>
+                    <div class="expertise-content">
+                        <div class="expertise-header">
+                            <span class="expertise-number">03</span>
+                            <h3 class="expertise-title">Experimentation & Evaluation</h3>
+                        </div>
+                        <p class="expertise-description">
+                            Designed A/B testing, uplift modeling, and structured evaluation pipelines for model safety and performance.
+                        </p>
+                        <div class="expertise-tags">
+                            <span class="tag">A/B Testing</span>
+                            <span class="tag">Uplift Modeling</span>
+                            <span class="tag">ML Safety</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="expertise-card glass fade-in">
-                    <div class="expertise-icon">🎯</div>
-                    <h3 class="expertise-title">Enterprise AI Strategy</h3>
-                    <p class="expertise-description">
-                        Partnered with VP-level stakeholders to set AI roadmaps and deploy systems with measurable ROI.
-                    </p>
+                <div class="expertise-card fade-in" data-expertise="strategy">
+                    <div class="expertise-accent"></div>
+                    <div class="expertise-content">
+                        <div class="expertise-header">
+                            <span class="expertise-number">04</span>
+                            <h3 class="expertise-title">Enterprise AI Strategy</h3>
+                        </div>
+                        <p class="expertise-description">
+                            Partnered with VP-level stakeholders to set AI roadmaps and deploy systems with measurable ROI.
+                        </p>
+                        <div class="expertise-tags">
+                            <span class="tag">AI Strategy</span>
+                            <span class="tag">ROI Analysis</span>
+                            <span class="tag">Leadership</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="expertise-card fade-in" data-expertise="entrepreneurship">
+                    <div class="expertise-accent"></div>
+                    <div class="expertise-content">
+                        <div class="expertise-header">
+                            <span class="expertise-number">05</span>
+                            <h3 class="expertise-title">Entrepreneurship & Startup Operations</h3>
+                        </div>
+                        <p class="expertise-description">
+                            Early-stage operator expertise as 1st employee at Passes and 9th at Pallet. Built tech, team, operations and GTM strategies from the ground up.
+                        </p>
+                        <div class="expertise-tags">
+                            <span class="tag">Founding Team</span>
+                            <span class="tag">0-to-1 Building</span>
+                            <span class="tag">Seed to Series A</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -159,18 +217,18 @@
 
             <!-- Featured/Hero Media Item -->
             <div class="media-featured fade-in">
-                <div class="featured-badge">Featured</div>
+                <div class="featured-badge">Upcoming</div>
                 <div class="featured-content">
                     <div class="featured-meta">
-                        <span class="featured-type">YouTube Talk</span>
-                        <span class="featured-date">MLOps Community</span>
+                        <span class="featured-type">Conference Talk</span>
+                        <span class="featured-date">STARWEST 2025 • Anaheim, CA</span>
                     </div>
-                    <h3 class="featured-title">MLOps Community Talk</h3>
+                    <h3 class="featured-title">Operationalizing Responsible AI in QA</h3>
                     <p class="featured-description">
-                        Deep dive into machine learning operations and best practices for deploying ML systems at scale. Discussing real-world challenges and solutions from building production AI systems.
+                        Speaking at STARWEST Conference on implementing responsible AI practices in quality assurance. Covering practical frameworks for ensuring AI systems are ethical, transparent, and trustworthy in production environments.
                     </p>
-                    <a href="https://www.youtube.com/watch?v=rc8zLY15WZU" target="_blank" class="featured-link">
-                        <span>Watch Full Talk</span>
+                    <a href="https://starwest.techwell.com/speakers/connie-yang" target="_blank" class="featured-link">
+                        <span>View Speaker Profile</span>
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M7 17L17 7"></path>
                             <path d="M7 7h10v10"></path>
@@ -178,12 +236,38 @@
                     </a>
                 </div>
                 <div class="featured-visual">
-                    <div class="play-button">▶</div>
+                    <div class="play-button">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"></path>
+                            <path d="M9 12l2 2 4-4"></path>
+                        </svg>
+                    </div>
                 </div>
             </div>
 
             <!-- Media Grid -->
             <div class="media-grid-new">
+                <article class="media-item fade-in" data-category="talks">
+                    <div class="media-item-header">
+                        <span class="media-badge talk">Talk</span>
+                        <span class="media-duration">YouTube</span>
+                    </div>
+                    <h3 class="media-item-title">
+                        <a href="https://www.youtube.com/watch?v=rc8zLY15WZU" target="_blank">
+                            MLOps Community Talk
+                        </a>
+                    </h3>
+                    <p class="media-item-source">MLOps Community</p>
+                    <p class="media-item-excerpt">
+                        Deep dive into ML operations and best practices for deploying ML systems at scale.
+                    </p>
+                    <div class="media-item-footer">
+                        <a href="https://www.youtube.com/watch?v=rc8zLY15WZU" target="_blank" class="media-item-link">
+                            Watch →
+                        </a>
+                    </div>
+                </article>
+
                 <article class="media-item fade-in" data-category="talks">
                     <div class="media-item-header">
                         <span class="media-badge podcast">Podcast</span>
@@ -316,9 +400,20 @@
     <section class="publications" id="publications">
         <div class="section-container">
             <div class="section-header">
-                <h2>Publications & Patents</h2>
-                <p class="section-subtitle">Research contributions and intellectual property</p>
+                <h2>Leadership, Patents & Research</h2>
+                <p class="section-subtitle">Academic leadership, intellectual property, and research contributions</p>
             </div>
+
+            <!-- Advisory Role -->
+            <div class="advisory-compact glass fade-in">
+                <div class="advisory-badge">Board Member</div>
+                <h3 class="advisory-title-compact">University of Washington - Industry Advisory Board</h3>
+                <p class="advisory-desc-compact">Master of Science in Data Science Program</p>
+                <a href="https://www.washington.edu/datasciencemasters/industry-advisory-board/" target="_blank" class="advisory-link-compact">
+                    View Board →
+                </a>
+            </div>
+
             <div class="publications-grid">
                 <div class="publication-item glass fade-in">
                     <span class="publication-type">Patent</span>
@@ -355,8 +450,7 @@
                 </div>
             </div>
         </div>
-    </section>
-    
+
     <section class="experience" id="experience">
         <div class="section-container">
             <div class="section-header">
@@ -366,21 +460,27 @@
             <div class="timeline">
                 <div class="timeline-item fade-in">
                     <div class="timeline-content glass">
-                        <h3 class="company-name">3Cloud</h3>
+                        <div class="timeline-header">
+                            <h3 class="company-name">3Cloud</h3>
+                            <span class="company-location">San Francisco, CA</span>
+                        </div>
                         <p class="role-title">Director of Machine Learning and AI</p>
                         <p class="timeline-date">March 2024 – Present</p>
                         <ul class="timeline-achievements">
                             <li>Lead GenAI & Insights delivery for LinkedIn's Workplace division</li>
                             <li>Expanded LinkedIn engagement from $5M to $8M through AI initiatives</li>
                             <li>Architected LLMOps pipelines with Azure OpenAI and Databricks</li>
-                            <li>Scaled and led an 8-person ML/AI engineering team</li>
+                            <li>People manager of team of 8-11 ML/AI delivery team</li>
                         </ul>
                     </div>
                 </div>
                 
                 <div class="timeline-item fade-in">
                     <div class="timeline-content glass">
-                        <h3 class="company-name">DesignMind</h3>
+                        <div class="timeline-header">
+                            <h3 class="company-name">DesignMind</h3>
+                            <span class="company-location">San Francisco, CA</span>
+                        </div>
                         <p class="role-title">Vice President of Machine Learning and AI</p>
                         <p class="timeline-date">May 2023 – March 2024</p>
                         <ul class="timeline-achievements">
@@ -393,8 +493,11 @@
                 
                 <div class="timeline-item fade-in">
                     <div class="timeline-content glass">
-                        <h3 class="company-name">Passes</h3>
-                        <p class="role-title">Founding 1st Employee, Head of Operations & Technology</p>
+                        <div class="timeline-header">
+                            <h3 class="company-name">Passes</h3>
+                            <span class="company-location">Miami, FL</span>
+                        </div>
+                        <p class="role-title">Founding 1st Employee, Head of Operations</p>
                         <p class="timeline-date">May 2022 – May 2023</p>
                         <ul class="timeline-achievements">
                             <li>Seed funding from Multicoin Capital, David Sacks, Paris Hilton's fund</li>
@@ -403,10 +506,30 @@
                         </ul>
                     </div>
                 </div>
-                
+
                 <div class="timeline-item fade-in">
                     <div class="timeline-content glass">
-                        <h3 class="company-name">Microsoft</h3>
+                        <div class="timeline-header">
+                            <h3 class="company-name">Pallet</h3>
+                            <span class="company-location">New York City, NY</span>
+                        </div>
+                        <p class="role-title">Lead Data Scientist</p>
+                        <p class="timeline-date">July 2021 – May 2022</p>
+                        <ul class="timeline-achievements">
+                            <li>Designed and productionized transformer-based multi-label classification pipeline</li>
+                            <li>Increased data-labeling throughput 10x and reduced outsourcing costs by 50%+</li>
+                            <li>Integrated ML/AI into seed stage venture-backed startup in New York</li>
+                            <li>Led ML strategy and build-out for successful big data integration</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content glass">
+                        <div class="timeline-header">
+                            <h3 class="company-name">Microsoft</h3>
+                            <span class="company-location">Redmond, WA</span>
+                        </div>
                         <p class="role-title">Data Scientist I-II</p>
                         <p class="timeline-date">September 2017 – July 2021</p>
                         <ul class="timeline-achievements">

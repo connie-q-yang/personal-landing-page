@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initMobileMenu();
     loadProfileImage();
     initMediaTabs();
+    initTypingAnimation();
 });
 
 // Navbar scroll effect
@@ -111,24 +112,27 @@ function initMobileMenu() {
 
 // Load profile image
 function loadProfileImage() {
-    const profileImageContainer = document.querySelector('.profile-image');
-    
-    // Check if image exists
-    const img = new Image();
-    img.src = 'assets/images/profile.png';
-    
-    img.onload = function() {
-        profileImageContainer.innerHTML = `
-            <img src="assets/images/profile.png" 
-                 alt="Connie Yang" 
-                 style="width: 100%; height: 100%; object-fit: cover;">
-        `;
-    };
-    
-    img.onerror = function() {
-        // Keep the initials as fallback
-        console.log('Profile image not found, using initials');
-    };
+    const profileCircle = document.querySelector('.profile-circle');
+    const profileInner = document.querySelector('.profile-inner');
+
+    if (profileCircle && profileInner) {
+        const img = new Image();
+        img.src = 'assets/images/profile.png';
+
+        img.onload = function() {
+            // Replace initials with actual image
+            profileCircle.innerHTML = `
+                <img src="assets/images/profile.png"
+                     alt="Connie Yang"
+                     style="width: 100%; height: 100%; object-fit: cover;">
+            `;
+        };
+
+        img.onerror = function() {
+            // Keep the initials as fallback
+            console.log('Profile image not found, using initials');
+        };
+    }
 }
 
 // Analytics (optional - replace with your tracking ID)
@@ -234,6 +238,52 @@ function initMediaTabs() {
             });
         });
     });
+}
+
+// Typing Animation
+function initTypingAnimation() {
+    const typingElement = document.getElementById('typingLine');
+    if (!typingElement) return;
+
+    const phrases = [
+        "I build AI systems that drive real impact.",
+        "I transform ideas into scalable solutions.",
+        "I lead teams to deliver enterprise AI."
+    ];
+
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingSpeed = 100;
+
+    function type() {
+        const currentPhrase = phrases[phraseIndex];
+
+        if (isDeleting) {
+            typingElement.textContent = currentPhrase.substring(0, charIndex - 1);
+            charIndex--;
+            typingSpeed = 50;
+        } else {
+            typingElement.textContent = currentPhrase.substring(0, charIndex + 1);
+            charIndex++;
+            typingSpeed = 100;
+        }
+
+        if (!isDeleting && charIndex === currentPhrase.length) {
+            // Pause at end of phrase
+            typingSpeed = 2000;
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            phraseIndex = (phraseIndex + 1) % phrases.length;
+            typingSpeed = 500; // Pause before typing new phrase
+        }
+
+        setTimeout(type, typingSpeed);
+    }
+
+    // Start typing animation
+    setTimeout(type, 1000);
 }
 
 // Console Easter Egg
