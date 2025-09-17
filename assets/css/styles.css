@@ -343,15 +343,16 @@ h1 {
 
 /* Hero Title - Larger */
 .hero-title {
-    font-size: clamp(3.5rem, 7vw, 5.5rem);
+    font-size: clamp(3rem, 6vw, 5rem);
     font-weight: 800;
     background: linear-gradient(135deg, #ffffff, #e2e8f0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin-bottom: 2rem;
-    letter-spacing: -0.03em;
-    line-height: 1;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    padding-bottom: 0.2rem;
 }
 
 /* Typing Animation - Larger */
