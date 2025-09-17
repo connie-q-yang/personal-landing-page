@@ -889,6 +889,133 @@ h2 {
     color: var(--text-secondary);
 }
 
+/* Education Section */
+.education {
+    padding: 5rem 0;
+    background: rgba(255, 255, 255, 0.01);
+}
+
+.education-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.education-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 2.5rem;
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.education-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #8B5CF6, #5E72E4);
+}
+
+.education-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(139, 92, 246, 0.2);
+}
+
+.education-logo {
+    flex-shrink: 0;
+}
+
+.cmu-logo {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(94, 114, 228, 0.1));
+    border: 2px solid rgba(139, 92, 246, 0.2);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #8B5CF6;
+    letter-spacing: 0.05em;
+}
+
+.education-details {
+    flex: 1;
+}
+
+.university-name {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #fff, #e2e8f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.degree-info {
+    font-size: 1.125rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.education-timeline {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.education-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.highlight-item svg {
+    color: #8B5CF6;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .education-card {
+        flex-direction: column;
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .cmu-logo {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto;
+    }
+
+    .education-details {
+        text-align: left;
+    }
+
+    .university-name {
+        font-size: 1.5rem;
+    }
+}
+
 /* Media Section */
 .media-grid {
     display: grid;
@@ -1389,6 +1516,8 @@ h2 {
 .timeline {
     position: relative;
     padding-left: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .timeline::before {
@@ -1478,6 +1607,188 @@ h2 {
     position: absolute;
     left: 0;
     color: var(--primary);
+}
+
+/* Compact Education Section */
+.education-compact {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.education-toggle {
+    width: 100%;
+    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.education-toggle:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(139, 92, 246, 0.2);
+}
+
+.education-toggle.active {
+    border-color: rgba(139, 92, 246, 0.3);
+    background: rgba(139, 92, 246, 0.05);
+}
+
+.toggle-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(139, 92, 246, 0.1);
+    color: #8B5CF6;
+    border-radius: 6px;
+    font-size: 1.25rem;
+    font-weight: 300;
+    transition: all 0.3s ease;
+}
+
+.toggle-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.education-summary {
+    margin-left: auto;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    opacity: 0.8;
+}
+
+.education-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    margin-top: 1rem;
+}
+
+.education-details.expanded {
+    max-height: 500px;
+    transition: max-height 0.5s ease-in;
+}
+
+.education-details .timeline-item {
+    padding-left: 2rem;
+    padding-bottom: 0;
+}
+
+.education-details .timeline-content {
+    background: rgba(139, 92, 246, 0.03);
+    border-color: rgba(139, 92, 246, 0.1);
+}
+
+@media (max-width: 768px) {
+    .education-summary {
+        display: none;
+    }
+}
+
+/* Education Column Styles - Remove these since we're not using columns anymore */
+.education-timeline {
+    margin-top: 0;
+}
+
+.edu-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.edu-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #8B5CF6, #5E72E4);
+    border-radius: 16px 16px 0 0;
+}
+
+.edu-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(139, 92, 246, 0.2);
+}
+
+.edu-header {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.75rem;
+    align-items: flex-start;
+}
+
+.cmu-badge {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(94, 114, 228, 0.1));
+    border: 2px solid rgba(139, 92, 246, 0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #8B5CF6;
+    flex-shrink: 0;
+}
+
+.edu-header .university-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+}
+
+.degree-name {
+    font-size: 1rem;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+}
+
+.edu-date {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.edu-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+}
+
+.edu-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.point-marker {
+    width: 6px;
+    height: 6px;
+    background: #8B5CF6;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 0.5rem;
 }
 
 /* Contact */
@@ -1688,11 +1999,11 @@ h2 {
     .timeline {
         padding-left: 1rem;
     }
-    
+
     .timeline-item {
         padding-left: 1.5rem;
     }
-    
+
     .timeline-item::before {
         left: -1.5rem;
     }

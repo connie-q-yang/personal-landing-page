@@ -286,6 +286,23 @@ function initTypingAnimation() {
     setTimeout(type, 1000);
 }
 
+// Toggle Education Details
+function toggleEducation() {
+    const details = document.getElementById('educationDetails');
+    const toggle = document.querySelector('.education-toggle');
+    const icon = toggle.querySelector('.toggle-icon');
+
+    if (details.classList.contains('expanded')) {
+        details.classList.remove('expanded');
+        icon.textContent = '+';
+        toggle.classList.remove('active');
+    } else {
+        details.classList.add('expanded');
+        icon.textContent = '−';
+        toggle.classList.add('active');
+    }
+}
+
 // Console Easter Egg
 console.log('%c👋 Hi there!', 'font-size: 24px; font-weight: bold; color: #5e72e4;');
 console.log('%cInterested in working together? Let\'s connect!', 'font-size: 14px; color: #64748b;');
