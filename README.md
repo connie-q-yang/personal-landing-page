@@ -110,6 +110,56 @@ This uses `live-server` for automatic page refresh on file changes.
 2. The image will automatically replace the "CY" initials placeholder
 3. Recommended: Square image, at least 400x400px
 
+### Setting Up Link Previews
+
+**Important:** Link previews (for text messages, social media) only work when the site is deployed online. The Open Graph image must be accessible via a public URL.
+
+**Option 1: Deploy to GitHub Pages (Recommended)**
+```bash
+# First, update the og:url and og:image URLs in index.html to match your GitHub Pages URL
+# Example: https://yourusername.github.io/connie-yang-portfo/assets/images/og-preview.png
+
+# Then deploy:
+npm run deploy
+```
+
+**Option 2: Test Locally with ngrok**
+```bash
+# Install ngrok
+brew install ngrok  # Mac
+# or download from https://ngrok.com
+
+# Start your local server
+npm start
+
+# In another terminal, expose it with ngrok
+ngrok http 3000
+
+# Update meta tags with the ngrok URL temporarily
+```
+
+**Option 3: Deploy to Vercel (Free)**
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel
+
+# Follow prompts, your site will be live instantly
+```
+
+**Creating the Preview Image:**
+1. Open `assets/images/generate-og-image.html` in browser
+2. Screenshot the page (1200x630px)
+3. Save as `assets/images/og-preview.png`
+4. Commit and deploy
+
+**After Deployment:**
+- Text messages will show image preview
+- Social media will display rich cards
+- Test with: [OpenGraph.xyz](https://www.opengraph.xyz/)
+
 ### Color Scheme
 
 The site uses CSS custom properties for easy theming:
