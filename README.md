@@ -110,28 +110,6 @@ This uses `live-server` for automatic page refresh on file changes.
 2. The image will automatically replace the "CY" initials placeholder
 3. Recommended: Square image, at least 400x400px
 
-### Setting Up Link Previews (Open Graph)
-
-The site is configured with Open Graph and Twitter Card meta tags for rich link previews when shared on social media, messaging apps, or text messages.
-
-**To generate the preview image:**
-1. Open `assets/images/generate-og-image.html` in a browser
-2. Take a screenshot of the 1200x630px window
-3. Save as `assets/images/og-preview.png`
-4. Upload to your web host
-
-**Preview will show:**
-- Your name and title
-- Professional tagline
-- Key stats (experience, patents, education)
-- Branded gradient background
-- Profile initials or image
-
-**Testing your preview:**
-- Facebook: [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/)
-- Twitter: [Twitter Card Validator](https://cards-dev.twitter.com/validator)
-- LinkedIn: [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/)
-
 ### Color Scheme
 
 The site uses CSS custom properties for easy theming:
@@ -185,11 +163,11 @@ The server has caching disabled by default. If changes still don't appear:
 - **http-server** - Static file serving
 - **live-server** - Development with live-reload
 
-## 📄 License
+## License
 
 MIT License - feel free to use this template for your own portfolio
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
@@ -197,7 +175,7 @@ MIT License - feel free to use this template for your own portfolio
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📧 Contact
+## Contact
 
 For questions or suggestions, please reach out through the contact form on the website or via LinkedIn.
 
