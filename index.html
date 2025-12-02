@@ -284,32 +284,38 @@
                 <button class="media-tab" data-category="features">Features</button>
             </div>
 
-            <!-- Featured/Hero Media Item -->
-            <div class="media-featured fade-in">
-                <div class="featured-content">
-                    <div class="featured-meta">
-                        <span class="featured-type">Conference Talk</span>
-                        <span class="featured-date">STARWEST 2025 • Anaheim, CA</span>
-                    </div>
-                    <h3 class="featured-title">Operationalizing Responsible AI in QA</h3>
-                    <p class="featured-description">
-                        Speaking at STARWEST Conference on implementing responsible AI practices in quality assurance. Covering practical frameworks for ensuring AI systems are ethical, transparent, and trustworthy in production environments.
-                    </p>
-                    <a href="https://starwest.techwell.com/speakers/connie-yang" target="_blank" class="featured-link">
-                        <span>View Speaker Profile</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M7 17L17 7"></path>
-                            <path d="M7 7h10v10"></path>
-                        </svg>
+            <!-- Media Carousel -->
+            <div class="media-carousel-container">
+                <button class="carousel-nav carousel-prev" onclick="scrollCarousel(-1)">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6"></path>
+                    </svg>
+                </button>
+                <div class="media-carousel">
+                <article class="media-item fade-in" data-category="talks">
+                    <a href="https://starwest.techwell.com/speakers/connie-yang" target="_blank" class="media-item-image">
+                        <img src="assets/images/starwest.jpeg" alt="STARWEST Conference Talk" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px 12px 0 0; cursor: pointer;">
                     </a>
-                </div>
-                <div class="featured-visual">
-                    <img src="assets/images/starwest.jpeg" alt="Connie Yang at STARWEST Conference" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
-                </div>
-            </div>
+                    <div class="media-item-header">
+                        <span class="media-badge talk">Talk</span>
+                        <span class="media-duration">2025</span>
+                    </div>
+                    <h3 class="media-item-title">
+                        <a href="https://starwest.techwell.com/speakers/connie-yang" target="_blank">
+                            Operationalizing Responsible AI in QA
+                        </a>
+                    </h3>
+                    <p class="media-item-source">STARWEST Conference • Anaheim, CA</p>
+                    <p class="media-item-excerpt">
+                        Implementing responsible AI practices in quality assurance with practical frameworks for production environments.
+                    </p>
+                    <div class="media-item-footer">
+                        <a href="https://starwest.techwell.com/speakers/connie-yang" target="_blank" class="media-item-link">
+                            View →
+                        </a>
+                    </div>
+                </article>
 
-            <!-- Media Grid -->
-            <div class="media-grid-new">
                 <article class="media-item fade-in" data-category="talks">
                     <div class="media-item-image">
                         <img src="assets/images/smc.jpeg" alt="Connie Yang at Microsoft SME&C Sales & Partner Summit" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px 12px 0 0;">
@@ -327,7 +333,7 @@
                     </p>
                     <div class="media-item-footer">
                         <span class="media-item-link" style="color: var(--text-secondary);">
-                            Oct 20-22, 2024
+                            Oct 20-22, 2025
                         </span>
                     </div>
                 </article>
@@ -512,6 +518,12 @@
                         </a>
                     </div>
                 </article>
+                </div>
+                <button class="carousel-nav carousel-next" onclick="scrollCarousel(1)">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6"></path>
+                    </svg>
+                </button>
             </div>
         </div>
     </section>
