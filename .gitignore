@@ -32,4 +32,5 @@ logs/
 
 # Cache
 .cache/
-.parcel-cache/
+.parcel-cache/# Backup images
+assets/images/*-original.png
