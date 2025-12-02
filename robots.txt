@@ -1,0 +1,10 @@
+# robots.txt for connieqinyang.com
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://connieqinyang.com/sitemap.xml
+
+# Crawl-delay (optional, helps prevent server overload)
+Crawl-delay: 1

@@ -1,0 +1,25 @@
+{
+    "name": "connie-yang-portfolio",
+    "version": "1.0.0",
+    "description": "Personal portfolio website for Connie Yang",
+    "main": "index.html",
+    "scripts": {
+      "start": "npx http-server . -p 3000 -c-1 -o index.html",
+      "dev": "npx live-server --port=3000",
+      "build": "echo 'No build needed for static site'",
+      "deploy": "gh-pages -d ."
+    },
+    "keywords": [
+      "portfolio",
+      "AI",
+      "machine learning",
+      "personal website"
+    ],
+    "author": "Connie Yang",
+    "license": "MIT",
+    "devDependencies": {
+      "http-server": "^14.1.1",
+      "live-server": "^1.2.2",
+      "gh-pages": "^5.0.0"
+    }
+  }
