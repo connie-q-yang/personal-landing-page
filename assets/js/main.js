@@ -254,7 +254,7 @@ function initTypingAnimation() {
     let phraseIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    let typingSpeed = 100;
+    let typingSpeed = 60;
 
     function type() {
         const currentPhrase = phrases[phraseIndex];
@@ -262,21 +262,21 @@ function initTypingAnimation() {
         if (isDeleting) {
             typingElement.textContent = currentPhrase.substring(0, charIndex - 1);
             charIndex--;
-            typingSpeed = 50;
+            typingSpeed = 30;
         } else {
             typingElement.textContent = currentPhrase.substring(0, charIndex + 1);
             charIndex++;
-            typingSpeed = 100;
+            typingSpeed = 60;
         }
 
         if (!isDeleting && charIndex === currentPhrase.length) {
             // Pause at end of phrase
-            typingSpeed = 2000;
+            typingSpeed = 1200;
             isDeleting = true;
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
             phraseIndex = (phraseIndex + 1) % phrases.length;
-            typingSpeed = 500; // Pause before typing new phrase
+            typingSpeed = 300; // Pause before typing new phrase
         }
 
         setTimeout(type, typingSpeed);
