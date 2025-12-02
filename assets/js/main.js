@@ -338,7 +338,7 @@ function startCarouselAutoScroll() {
                 });
             } else {
                 // Scroll incrementally for smoother motion
-                carousel.scrollLeft += 1.5;
+                carousel.scrollLeft += 3;
             }
         }
 
