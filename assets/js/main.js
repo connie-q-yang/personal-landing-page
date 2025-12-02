@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     loadProfileImage();
     initMediaTabs();
     initTypingAnimation();
+    initCarouselControls();
 });
 
 // Navbar scroll effect
@@ -220,17 +221,15 @@ function initMediaTabs() {
 
             const category = this.getAttribute('data-category');
 
-            // Filter media items
+            // Filter media items (for carousel)
             mediaItems.forEach(item => {
                 if (category === 'all' || item.getAttribute('data-category') === category) {
-                    item.style.display = 'block';
+                    item.style.display = 'flex';
                     setTimeout(() => {
                         item.style.opacity = '1';
-                        item.style.transform = 'translateY(0)';
                     }, 50);
                 } else {
                     item.style.opacity = '0';
-                    item.style.transform = 'translateY(20px)';
                     setTimeout(() => {
                         item.style.display = 'none';
                     }, 300);
@@ -301,6 +300,108 @@ function toggleEducation() {
         icon.textContent = '−';
         toggle.classList.add('active');
     }
+}
+
+// Media Carousel Scroll Function
+function scrollCarousel(direction) {
+    const carousel = document.querySelector('.media-carousel');
+    if (!carousel) return;
+
+    const scrollAmount = 400; // Scroll by ~1 card width
+    const currentScroll = carousel.scrollLeft;
+
+    carousel.scrollTo({
+        left: currentScroll + (scrollAmount * direction),
+        behavior: 'smooth'
+    });
+}
+
+// Auto-scrolling Carousel
+let carouselInterval;
+let isCarouselPaused = false;
+
+function startCarouselAutoScroll() {
+    const carousel = document.querySelector('.media-carousel');
+    if (!carousel) return;
+
+    // Smooth continuous scroll
+    function smoothScroll() {
+        if (!isCarouselPaused) {
+            const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+            const currentScroll = carousel.scrollLeft;
+
+            // If reached the end, loop back to start
+            if (currentScroll >= maxScroll - 5) {
+                carousel.scrollTo({
+                    left: 0,
+                    behavior: 'instant'
+                });
+            } else {
+                // Scroll incrementally for smoother motion
+                carousel.scrollLeft += 1.5;
+            }
+        }
+
+        requestAnimationFrame(smoothScroll);
+    }
+
+    // Start the smooth scroll
+    requestAnimationFrame(smoothScroll);
+}
+
+function initCarouselControls() {
+    const carousel = document.querySelector('.media-carousel');
+    const mediaItems = document.querySelectorAll('.media-item');
+
+    if (!carousel) return;
+
+    // Pause on hover over carousel (desktop)
+    carousel.addEventListener('mouseenter', () => {
+        isCarouselPaused = true;
+    });
+
+    carousel.addEventListener('mouseleave', () => {
+        isCarouselPaused = false;
+    });
+
+    // Pause on hover over individual media items (desktop)
+    mediaItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            isCarouselPaused = true;
+        });
+
+        item.addEventListener('mouseleave', () => {
+            isCarouselPaused = false;
+        });
+    });
+
+    // Pause on touch/scroll (mobile)
+    let scrollTimeout;
+    carousel.addEventListener('touchstart', () => {
+        isCarouselPaused = true;
+    });
+
+    carousel.addEventListener('touchend', () => {
+        // Resume after 2 seconds of no interaction
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            isCarouselPaused = false;
+        }, 2000);
+    });
+
+    carousel.addEventListener('scroll', () => {
+        // Detect manual scrolling
+        clearTimeout(scrollTimeout);
+        isCarouselPaused = true;
+
+        // Resume after user stops scrolling
+        scrollTimeout = setTimeout(() => {
+            isCarouselPaused = false;
+        }, 2000);
+    }, { passive: true });
+
+    // Start auto-scroll
+    startCarouselAutoScroll();
 }
 
 // Console Easter Egg
