@@ -10,13 +10,13 @@
     --primary: #5e72e4;
     --secondary: #825ee4;
     --accent: #f5365c;
-    --dark: #0b1929;
-    --darker: #050d18;
+    --dark: #1a2332;
+    --darker: #0f1825;
     --light: #ffffff;
     --text-primary: #ffffff;
-    --text-secondary: #94a3b8;
-    --text-muted: #64748b;
-    --card-bg: rgba(15, 23, 42, 0.6);
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --card-bg: rgba(26, 35, 50, 0.7);
     --border: rgba(148, 163, 184, 0.1);
     --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
@@ -40,7 +40,7 @@ body {
     top: 0;
     left: 0;
     z-index: -2;
-    background: linear-gradient(180deg, #0b1929 0%, #050d18 100%);
+    background: linear-gradient(180deg, #1a2332 0%, #0f1825 100%);
 }
 
 .mesh-gradient::before,
@@ -96,7 +96,7 @@ nav {
 }
 
 nav.scrolled {
-    background: rgba(5, 13, 24, 0.95);
+    background: rgba(15, 24, 37, 0.95);
     backdrop-filter: blur(20px);
     box-shadow: 0 1px 3px rgba(0,0,0,0.5);
 }
@@ -2027,7 +2027,7 @@ h2 {
         top: 60px;
         left: 0;
         right: 0;
-        background: rgba(5, 13, 24, 0.98);
+        background: rgba(15, 24, 37, 0.98);
         padding: 2rem;
         flex-direction: column;
         gap: 1rem;
